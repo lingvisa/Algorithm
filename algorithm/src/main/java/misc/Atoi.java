@@ -49,5 +49,6 @@ public class Atoi {
 	public static void main(String[] args) {
 		
 		System.out.println(atoi("733".toCharArray()));
+		
 	}
 }
