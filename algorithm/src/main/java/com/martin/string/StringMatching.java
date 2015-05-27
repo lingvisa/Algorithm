@@ -10,7 +10,7 @@ public class StringMatching {
 	static int indexOf(String str, String pattern) {
 
 		// or throw InvalidArgumentException
-		if(str==null || pattern==null ) {
+		if(str==null || pattern==null || pattern.isEmpty()) {
 			return -1;
 		}
 
@@ -47,6 +47,8 @@ public class StringMatching {
 		assert indexOf("abcde", "abc") == 0;
 		assert indexOf("abcde", "cd") == 2;
 		assert indexOf("abc", "abcd") == -1;
+		assert indexOf("a", "x") == -1;
+		assert indexOf("abcde", "") == -1;
 		
 		System.out.println("Testing successful!");
 		
