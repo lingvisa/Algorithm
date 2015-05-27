@@ -63,7 +63,7 @@ public class Palindrome {
 			char rightChar = Character.toLowerCase(str.charAt(right));
 			
 			
-			while( left <=right && !Character.isAlphabetic(leftChar) && !Character.isDigit(leftChar)) {
+			while( left <=mid && !Character.isAlphabetic(leftChar) && !Character.isDigit(leftChar)) {
 				left++;
 			}
 
