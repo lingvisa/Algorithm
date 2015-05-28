@@ -10,11 +10,6 @@ public class Itoa {
 	// 58 => "58"
 	static String itoa(int num) {
 		
-		 if (num == Integer.MIN_VALUE) { 
-	         // mininum signed value   
-			 return "-2147483648";
-		 }
-
 		 boolean negative = false;
 		 String s = "";
 		 if(num == 0) {
