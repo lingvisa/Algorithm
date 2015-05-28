@@ -2,9 +2,9 @@ package misc;
 
 
 /* Problem: convert an integer into a string representation.
-   Algorithm: Keeps dividing number by 10 and take the remainder. Stop when quotient becomes 0.
-	          If number was negative initially to print '-' sign.
-*/
+ *  Algorithm: Keeps dividing number by 10 and take the remainder. Stop when quotient becomes 0.
+ *	          If number was negative initially to print '-' sign.
+ **/
 public class Itoa {
 
 	// 58 => "58"
