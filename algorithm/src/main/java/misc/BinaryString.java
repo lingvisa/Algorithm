@@ -6,7 +6,7 @@ package misc;
  * Example: a="11", b="1", return "100"
  * 
  * Algorithm: Two indices i & j moving from the end to the beginning of 'a' and 'b', the sum at each index is 'temp' + a[i] + b[j].
- *            Be careful to update temp's value accordingly based on each pair of a[i] and b[j]; 
+ *            Be careful to update temp's value accordingly based on each pair of a[i] and b[j].
  * 
  * */
 
