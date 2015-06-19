@@ -27,14 +27,14 @@ public class VersionNumber {
 		int loc2 = v2.indexOf('.');
 
 		String v1FirstLevel = v1;
-		String v1SecondLevel = null;
+		String v1SecondLevel = "0";
 		if(loc1 != -1) {
 			v1FirstLevel = v1.substring(0, loc1);
 			v1SecondLevel = v1.substring(loc1+1);
 		}
 
 		String v2FirstLevel = v2;
-		String v2SecondLevel = null;
+		String v2SecondLevel = "0";
 		if(loc2 != -1) {
 			v2FirstLevel = v2.substring(0, loc2);
 			v2SecondLevel = v2.substring(loc2+1);
@@ -42,39 +42,20 @@ public class VersionNumber {
 
 		int v1FirstLevelInt = Integer.valueOf(v1FirstLevel);
 		int v2FirstLevelInt = Integer.valueOf(v2FirstLevel);
-		int v1SecondLevelInt = 0;
-		int v2SecondLevelInt = 0;
+		int v1SecondLevelInt = Integer.valueOf(v1SecondLevel);;
+		int v2SecondLevelInt = Integer.valueOf(v2SecondLevel);;
 
 		if(v1FirstLevelInt > v2FirstLevelInt) {
 			return 1;
 		}else if(v1FirstLevelInt < v2FirstLevelInt) {
 			return -1;
-		}else if(v1SecondLevel != null) {
-			v1SecondLevelInt = Integer.valueOf(v1SecondLevel);	
-			if(v2SecondLevel != null){
-				v2SecondLevelInt = Integer.valueOf(v2SecondLevel);
-				if(v1SecondLevelInt > v2SecondLevelInt) {
-					return 1;
-				}else if(v1SecondLevelInt < v2SecondLevelInt) {
-					return -1;
-				}else{
-					return 0;
-				}
-			}else if(v1SecondLevelInt==0) {
-				return 0;
-			}else{
-				return 1;
-			}	
-		}else if(v2SecondLevel != null) {
-			v2SecondLevelInt = Integer.valueOf(v2SecondLevel);
-			if(v1SecondLevelInt==v2SecondLevelInt){
-				return 0;
-			}else{
-				return -1;
-			}
+		}else if(v1SecondLevelInt > v2SecondLevelInt){
+			return 1;
+		}else if(v1SecondLevelInt < v2SecondLevelInt){
+			return -1;
 		}else{
 			return 0;
-		}		
+		}
 	}
 
 	static void testVersionNumber() {
