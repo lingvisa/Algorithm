@@ -59,7 +59,7 @@ public class VersionNumber {
 		}
 	}
 	
-	// Case 2: A more generic version, allow for multiple occurrences of dots in the string
+	// Case 2: A more generic version, allow for multiple occurrences.
 	// 1.0.0.0.1 :: 1.0
 	// 1.0 :: 1.0.2
 	static int compare2(String v1, String v2) {
@@ -77,6 +77,8 @@ public class VersionNumber {
 			v1FirstLevel = v1.substring(0,loc1);
 			v1FirstLevelInt = Integer.valueOf(v1FirstLevel);
 			v1RestLevel = v1.substring(loc1+1);
+		}else{
+			v1FirstLevelInt = Integer.valueOf(v1FirstLevel);
 		}
 
 		String v2FirstLevel = v2;
@@ -85,14 +87,14 @@ public class VersionNumber {
 			v2FirstLevel = v2.substring(0,loc2);
 			v2FirstLevelInt = Integer.valueOf(v2FirstLevel);
 			v2RestLevel = v2.substring(loc2+1);
+		}else{
+			v2FirstLevelInt = Integer.valueOf(v2FirstLevel);
 		}
 		
 		// 1.0 : 1.0
 		// v1 doesn't contain dot any more
 		if(loc1 == -1){
-			v1FirstLevelInt = Integer.valueOf(v1FirstLevel);
 			if(loc2==-1){ // v2 doesn't contain any dot any more
-				v2FirstLevelInt = Integer.valueOf(v2FirstLevel);
 				if(v1FirstLevelInt > v2FirstLevelInt){
 					return 1;
 				}else if(v1FirstLevelInt < v2FirstLevelInt) {
@@ -104,7 +106,6 @@ public class VersionNumber {
 				compare2(v1RestLevel, v2RestLevel);
 			}
 		}else if(loc2==-1){ // v1 still contains dot, but v2 doesn't contain dot
-			v2FirstLevelInt = Integer.valueOf(v2FirstLevel);
 			compare2(v1RestLevel,v2RestLevel);
 		}
 
