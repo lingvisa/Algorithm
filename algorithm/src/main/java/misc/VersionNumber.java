@@ -74,22 +74,18 @@ public class VersionNumber {
 		int v2FirstLevelInt = 0;
 		
 		if(loc1 != -1) {
-			v1FirstLevel = v1.substring(0,loc1);
-			v1FirstLevelInt = Integer.valueOf(v1FirstLevel);
+			v1FirstLevel = v1.substring(0,loc1);		
 			v1RestLevel = v1.substring(loc1+1);
-		}else{
-			v1FirstLevelInt = Integer.valueOf(v1FirstLevel);
 		}
+		v1FirstLevelInt = Integer.valueOf(v1FirstLevel);
 
 		String v2FirstLevel = v2;
 		String v2RestLevel = "0";
 		if(loc2 != -1) {
-			v2FirstLevel = v2.substring(0,loc2);
-			v2FirstLevelInt = Integer.valueOf(v2FirstLevel);
+			v2FirstLevel = v2.substring(0,loc2);		
 			v2RestLevel = v2.substring(loc2+1);
-		}else{
-			v2FirstLevelInt = Integer.valueOf(v2FirstLevel);
 		}
+		v2FirstLevelInt = Integer.valueOf(v2FirstLevel);
 		
 		// 1.0 : 1.0
 		// v1 doesn't contain dot any more
