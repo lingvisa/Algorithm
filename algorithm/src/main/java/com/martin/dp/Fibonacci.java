@@ -23,9 +23,7 @@ public class Fibonacci {
 
 	static int recursive(int n) {
 		
-		if(n==1) {
-			return 1;
-		}else if(n==2) {
+		if(n==1 || n==2) {
 			return 1;
 		}else{
 			return recursive(n-1) + recursive(n-2);
@@ -33,6 +31,10 @@ public class Fibonacci {
 	}
 	
 	static int dp(int n) {
+		
+		if(n==1 || n==2) {
+			return 1;
+		}
 		
 		int[] fibonacci = new int[n];
 		
@@ -46,12 +48,21 @@ public class Fibonacci {
 		return fibonacci[n-1];
 	}
 	
-	
+	static void test() {
+		
+		assert recursive(20) == 6765;
+		assert dp(20) == 6765;
+		assert recursive(1) == 1;
+		assert dp(1) == 1;
+		assert recursive(2) == 1;
+		assert dp(2) == 1;
+		
+		System.out.println("Test Finonacci successful!");
+	}
 	
 	public static void main(String[] args) {
 		
-		System.out.println(recursive(20));
-		System.out.println(dp(20));
+		test();
 	}
 
 }
