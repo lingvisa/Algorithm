@@ -1,5 +1,8 @@
 package com.martin.dp;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
  * Author: Congmin Min
  * Date: 06/26/2015
@@ -13,9 +16,9 @@ package com.martin.dp;
  *        = Fib(1) + Fib(0) + Fib(1) + Fib(1) + Fib(0)
  * 
  * Algorithm: 
- *     Recursion: Based on mathematical reduction
- *     DP: Store intermediate results in an array, and make it available to immediate next computation!
- *     
+ *     1. Recursion: Based on mathematical reduction
+ *     2. DP Bottom Up: Store intermediate results in an array, and make it available to immediate next computation!
+ *     3. Memoization Up Bottom: Store intermediate results in recursive version 
  * 
  * */
 
@@ -48,14 +51,42 @@ public class Fibonacci {
 		return fibonacci[n-1];
 	}
 	
+	static int memoization(int n) {
+		
+		Map<Integer, Integer> store = new HashMap<Integer, Integer>();
+		store.put(1, 1);
+		store.put(2, 1);
+		
+		return helper(n, store);
+	}
+	
+	// F(3) = F(2) + F(1)
+	private static int helper(int n, Map<Integer, Integer> store) {
+		
+		Integer value = store.get(n);
+		if(value !=null){
+			return value;
+		}
+		
+		value = helper(n-1, store) + helper(n-2, store);
+		store.put(n, value);
+		
+		return value;
+	}
+	
 	static void test() {
 		
 		assert recursive(20) == 6765;
 		assert dp(20) == 6765;
+		assert memoization(20) == 6765;
+		
 		assert recursive(1) == 1;
 		assert dp(1) == 1;
+		assert memoization(1) == 1;
+		
 		assert recursive(2) == 1;
 		assert dp(2) == 1;
+		assert memoization(2) == 1;
 		
 		System.out.println("Test Finonacci successful!");
 	}
@@ -63,6 +94,7 @@ public class Fibonacci {
 	public static void main(String[] args) {
 		
 		test();
+		System.out.println(memoization(4));
 	}
 
 }
