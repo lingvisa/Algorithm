@@ -1,6 +1,9 @@
 package com.martin.dp;
 
 /*
+ * Author: Congmin Min
+ * Date: 06/26/2015
+ * 
  * Problem: On a positive integer, you can perform any one of the following 3 steps:
  *          1) Subtract 1 from it, i.e. n = n-1;
  *          2) If it is divisible by 2, divide by 2, i.e. if n%2==0, n=n/2;
