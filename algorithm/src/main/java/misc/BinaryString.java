@@ -86,20 +86,86 @@ public class BinaryString {
 		return sb.reverse().toString();
 	}
 	
+	
+	static String add2(String a, String b) {
+		
+		StringBuilder sb = new StringBuilder();
+		
+		char charA = '0';
+		char charB = '0';
+		
+		int carry = '0';
+		
+		for(int i=a.length()-1, j=b.length()-1; i>=0 || j>=0; i--, j--) {
+			
+			if(i>=0) {
+				charA = a.charAt(i);
+			}
+			if(j>=0) {
+				charB = b.charAt(j);
+			}
+			
+			int intA = Character.getNumericValue(charA);
+			int intB = Character.getNumericValue(charB);
+			
+			int sum = (intA+intB)%2;
+			carry = (intA+intB)/2;
+			
+			
+			if(sum==1) {
+				if(carry==1){
+					sum=0;
+				}
+			}else if(carry==1){
+				carry=0;
+			}
+			
+			sb.append(String.valueOf(sum));
+		}
+		
+		if(carry==1) {
+			sb.append(carry);
+		}
+		
+		return sb.reverse().toString();
+	}
+	
+	static void testAdd() {
+
+		assert add("11", "1").equals("100");
+		assert add("11", "11").equals("110");
+		assert add("11", "10").equals("101");
+		assert add("00", "00").equals("00");
+		assert add("10", "10").equals("100");
+		assert add("10", "11").equals("101");
+		assert add("00", "0").equals("00");
+
+		assert add("1", "11").equals("100");
+		assert add("0", "11").equals("11");
+		assert add("101", "1100").equals("10001");
+
+		System.out.println("TestAdd() cases successful!");
+	}
+	
+	static void testAdd2() {
+		
+		assert add2("11", "1").equals("100");
+		assert add2("11", "11").equals("110");
+		assert add2("11", "10").equals("101");
+		assert add2("00", "00").equals("00");
+		assert add2("10", "10").equals("100");
+		assert add2("10", "11").equals("101");
+		assert add2("00", "0").equals("00");
+
+		assert add2("1", "11").equals("100");
+		assert add2("0", "11").equals("11");
+		assert add2("101", "1100").equals("10001");
+		System.out.println("TestAdd2() cases successful!");
+	}
+	
 	public static void main(String[] args) {
-		
-		assert add("11", "1")=="100";
-		assert add("11", "11")=="110";
-		assert add("11", "10")=="101";
-		assert add("00", "00")=="00";
-		assert add("10", "10")=="100";
-		assert add("10", "11")=="101";
-		assert add("00", "0")=="00";
-		
-		assert add("1", "11")=="100";
-		assert add("0", "11")=="11";
-		assert add("101", "1100")=="10001";
-		
-		System.out.println("Test cases successful!");
+
+		testAdd();
+		testAdd2();
 	}
 }

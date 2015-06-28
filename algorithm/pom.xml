@@ -21,5 +21,44 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <!--  Wikipedia denpendency -->
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.wikipedia</groupId>
+		<artifactId>de.tudarmstadt.ukp.wikipedia.api</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.wikipedia</groupId>
+		<artifactId>de.tudarmstadt.ukp.wikipedia.datamachine</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.wikipedia</groupId>
+		<artifactId>de.tudarmstadt.ukp.wikipedia.revisionmachine</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.wikipedia</groupId>
+		<artifactId>de.tudarmstadt.ukp.wikipedia.timemachine</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.wikipedia</groupId>
+		<artifactId>de.tudarmstadt.ukp.wikipedia.util</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.wikipedia</groupId>
+		<artifactId>de.tudarmstadt.ukp.wikipedia.parser</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+	
+	<dependency>
+    <groupId>info.bliki.wiki</groupId>
+    <artifactId>bliki-core</artifactId>
+    <version>3.0.19</version>
+</dependency>
+	
   </dependencies>
 </project>
