@@ -4,7 +4,7 @@ public class Atoi {
 
 	/**
 	 *  Problem: Convert a string to an interger, i.e. String str = "733" => int = 733
-	 *           Be careful of all corner cases
+	 *           Be careful of all corner cases.
 	 * 
 	 * */
 	static int atoi(char[] str)
